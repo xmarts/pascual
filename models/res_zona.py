@@ -8,4 +8,4 @@ _logger = logging.getLogger(__name__)
 class ResZona(models.Model):
     _name = "res.zona"
     name= fields.Char(string="Nombre")
-    user_id =fields.Many2one('res.users', string="Usuario")
+    user_id =fields.Many2one('hr.employee', string="Usuario")
