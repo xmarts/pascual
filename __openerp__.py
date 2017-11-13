@@ -31,6 +31,7 @@
         'views/stock_picking.xml',
         'views/assigned_boxes.xml',
         'views/motivo.xml',
+'views/zona.xml',
         #'views/stock_move.xml',
         'security/ir.model.access.csv',
         'reports/layout.xml',
