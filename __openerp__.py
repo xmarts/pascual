@@ -31,7 +31,7 @@
         'views/stock_picking.xml',
         'views/assigned_boxes.xml',
         'views/motivo.xml',
-'views/zona.xml',
+        'views/zona.xml',
         #'views/stock_move.xml',
         'security/ir.model.access.csv',
         'reports/layout.xml',
@@ -39,6 +39,7 @@
         'reports/delivery_contado.xml',
         'reports/delivery_credito.xml',
         'reports/entrega_comodato.xml',
+        'wizard/partner_process.xml',
 
     ],
     # only loaded in demonstration mode
