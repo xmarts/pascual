@@ -1,0 +1,30 @@
+## -*- coding: utf-8 -*-
+
+from openerp import models, fields, api, _, tools
+from openerp.exceptions import UserError, RedirectWarning, ValidationError
+import xlrd
+import shutil
+import logging
+_logger = logging.getLogger(__name__)
+
+class RouteOrder(models.Model):
+    _name ='route.order'
+    name = fields.Char(string="Nombre", required=True,index=True, copy=False, default='New',readonly=True)
+    partner_id = fields.Many2one('res.partner', string="Cliente", required=True)
+    partner_shipping_id = fields.Many2one('res.partner', string='Dirección Envío', required=True)
+    priority = fields.Selection([
+        ('critical', 'Critica'),
+        ('high', 'Alta'),
+        ('normal', 'Normal'),
+        ('low', 'Baja')
+        ], string='Prioridad')
+    date_order = fields.Datetime(string='Agendada', default=fields.Datetime.now)
+    manage_id = fields.Many2one('hr.employee', string="Encargado")
+    comentary = fields.Text('Comentarios')
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', 'New') == 'New':
+            vals['name'] = self.env['ir.sequence'].next_by_code('route.order') or 'New'
+        return super(RouteOrder, self).create(vals)
+
