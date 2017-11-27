@@ -21,6 +21,13 @@ class RouteOrder(models.Model):
     date_order = fields.Datetime(string='Agendada', default=fields.Datetime.now)
     manage_id = fields.Many2one('hr.employee', string="Encargado")
     comentary = fields.Text('Comentarios')
+    state = fields.Selection([
+        ('1', 'Sin descargar'),
+        ('2', 'Pendiente'),
+        ('3', 'Incompleta'),
+        ('4', 'Completa'),
+        ('5', 'Sin sincronizar')
+    ], string='Estatus',copy=False)
 
     @api.model
     def create(self, vals):
