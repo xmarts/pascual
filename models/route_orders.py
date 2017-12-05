@@ -13,21 +13,22 @@ class RouteOrder(models.Model):
     partner_id = fields.Many2one('res.partner', string="Cliente", required=True)
     partner_shipping_id = fields.Many2one('res.partner', string='Dirección Envío', required=True)
     priority = fields.Selection([
-        ('critical', 'Critica'),
-        ('high', 'Alta'),
-        ('normal', 'Normal'),
-        ('low', 'Baja')
-        ], string='Prioridad')
+        ('C', 'Critica'),
+        ('A', 'Alta'),
+        ('N', 'Normal'),
+        ('B', 'Baja')
+        ], string='Prioridad',default='N')
     date_order = fields.Datetime(string='Agendada', default=fields.Datetime.now)
     manage_id = fields.Many2one('hr.employee', string="Encargado")
     comentary = fields.Text('Comentarios')
     state = fields.Selection([
+        ('0', 'Sin sincronizar'),
         ('1', 'Sin descargar'),
         ('2', 'Pendiente'),
         ('3', 'Incompleta'),
         ('4', 'Completa'),
-        ('5', 'Sin sincronizar')
-    ], string='Estatus',copy=False)
+	('5', 'Cacelada' )
+    ], string='Estado',copy=False, default='0')
 
     @api.model
     def create(self, vals):

@@ -61,6 +61,7 @@
                     <field name="priority" />
                     <field name="date_order" />
                     <field name="manage_id" />
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
