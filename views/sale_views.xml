@@ -11,6 +11,9 @@
                 <xpath expr="//sheet/group/group/field[@name='partner_shipping_id']" position="after">
                     <field name="zona"/>
                 </xpath>
+                <xpath expr="//button[@name='action_done']" position="after">
+                <button name="recompute_coupon_lines2" string="Update Promotions2" type="object" attrs="{'invisible': [('state', 'in', ['sale', 'done', 'cancel'])]}"/>
+            </xpath>
             </field>
     </record>
 

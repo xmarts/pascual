@@ -2,6 +2,7 @@ from . import purchase
 from . import partner_sector
 from . import category_sector
 from . import res_zona
+from . import zona2
 from . import partner
 from . import product_container
 from . import product_family

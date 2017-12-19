@@ -15,6 +15,7 @@
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='sales_purchases']/group/group[@name='sale']/field[@name='message_bounce']" position="after">
                     <field name="zona"/>
+                    <field name="zona2"/>
                     <field name="day1"/>
                     <field name="day2"/>
                     <field name="day3"/>
