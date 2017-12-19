@@ -17,11 +17,8 @@ class RouteOrder(models.Model):
         ('A', 'Alta'),
         ('N', 'Normal'),
         ('B', 'Baja')
-<<<<<<< HEAD
-        ], string='Prioridad', default='N')
-=======
         ], string='Prioridad',default='N')
->>>>>>> 8dbc48cc16a27b0b8ddf09a7e140f439d70cec2f
+
     date_order = fields.Datetime(string='Agendada', default=fields.Datetime.now)
     manage_id = fields.Many2one('hr.employee', string="Encargado")
     comentary = fields.Text('Comentarios')
@@ -31,13 +28,8 @@ class RouteOrder(models.Model):
         ('2', 'Pendiente'),
         ('3', 'Incompleta'),
         ('4', 'Completa'),
-<<<<<<< HEAD
         ('5', 'Cacelada')
         ], string='Estado', copy=False, default='0')
-=======
-	('5', 'Cacelada' )
-    ], string='Estado',copy=False, default='0')
->>>>>>> 8dbc48cc16a27b0b8ddf09a7e140f439d70cec2f
 
     @api.model
     def create(self, vals):
