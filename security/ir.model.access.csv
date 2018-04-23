@@ -8,4 +8,4 @@ access_reason_rejection,access_reason_rejection,model_reason_rejection,,1,1,1,1
 access_assigned_boxes,access_assigned_boxes,model_assigned_boxes,,1,1,1,1
 access_res_zona,access_res_zona,model_res_zona,,1,1,1,1
 access_route_order,access_route_order,model_route_order,,1,1,1,1
-access_res_zona2,model_res_zona2,,1,1,1,1
+access_res_zona2,access_res_zona2,model_res_zona2,,1,1,1,1
